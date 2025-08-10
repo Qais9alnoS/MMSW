@@ -943,18 +943,7 @@ const CombinedPage = () => {
             </ScrollReveal>
           </section>
 
-          {/* Gallery Button */}
-          <section className="mt-16 text-center">
-            <ScrollReveal delay={0} origin="bottom" distance="40px" duration={800}>
-              <Button 
-                className="bg-primary hover:bg-primary-light text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2"
-                onClick={() => window.location.href = '/gallery'}
-              >
-                <Camera className="h-5 w-5" />
-                {t('gallery')}
-              </Button>
-            </ScrollReveal>
-          </section>
+
         </div>
       </section>
     </div>
