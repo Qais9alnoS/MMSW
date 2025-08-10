@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al-Mukhtar Model Schools - نبني مستقبلاً نصنع مجداً</title>
+    <meta name="description" content="Al-Mukhtar Model Schools - Private educational institution in Damascus, Syria offering quality education from Kindergarten to High School" />
+    <meta name="author" content="Al-Mukhtar Model Schools" />
+    <meta name="keywords" content="Damascus schools, private education, Syria education, Al-Mukhtar, model schools" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Al-Mukhtar Model Schools" />
+    <meta property="og:description" content="مدارس المختار النموذجية - نبني مستقبلاً نصنع مجداً" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/assets/logoM.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/assets/logoM.jpg" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script>
+      (function() {
+        const savedLanguage = localStorage.getItem('language');
+        if (savedLanguage) {
+          document.documentElement.lang = savedLanguage;
+          document.documentElement.dir = savedLanguage === 'ar' ? 'rtl' : 'ltr';
+        } else {
+          // Default to Arabic if no preference is saved
+          document.documentElement.lang = 'ar';
+          document.documentElement.dir = 'rtl';
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
