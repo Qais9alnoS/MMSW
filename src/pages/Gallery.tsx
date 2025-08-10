@@ -36,84 +36,84 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: "assets/class.png",
+      src: "/assets/class.png",
       alt: t('modernClassroom'),
       category: "classrooms",
       title: t('modernClassroom')
     },
     {
       id: 2,
-      src: "assets/sciencelab.png",
+      src: "/assets/sciencelab.png",
       alt: t('scienceLaboratory'),
       category: "facilities",
       title: t('scienceLaboratory')
     },
     {
       id: 3,
-      src: "assets/sports.png",
+      src: "/assets/sports.png",
       alt: t('sportsDay'),
       category: "sports",
       title: t('sportsDay')
     },
     {
       id: 4,
-      src: "assets/graduation.jpg",
+      src: "/assets/graduation.jpg",
       alt: t('graduation'),
       category: "events",
       title: t('graduation')
     },
     {
       id: 5,
-      src: "assets/art.png",
+      src: "/assets/art.png",
       alt: t('artWorkshop'),
       category: "activities",
       title: t('artWorkshop')
     },
     {
       id: 6,
-      src: "assets/books.png",
+      src: "/assets/books.png",
       alt: t('schoolLibrary'),
       category: "facilities",
       title: t('schoolLibrary')
     },
     {
       id: 7,
-      src: "assets/students.png",
+      src: "/assets/students.png",
       alt: t('groupStudy'),
       category: "students",
       title: t('groupStudy')
     },
     {
       id: 8,
-      src: "asstes/chemestrylab.png",
+      src: "/assets/chemistrylab.png",
       alt: t('chemistryLab'),
       category: "facilities",
       title: t('chemistryLab')
     },
     {
       id: 9,
-      src: "assets/biology.png",
+      src: "/assets/biology.png",
       alt: t('scienceFair'),
       category: "events",
       title: t('scienceFair')
     },
     {
       id: 10,
-      src: "assets/pclab.png",
+      src: "/assets/pclab.png",
       alt: t('computerLab'),
       category: "facilities",
       title: t('computerLab')
     },
     {
       id: 11,
-      src: "assets/tech.png",
+      src: "/assets/tech.png",
       alt: t('techIntegration'),
       category: "classrooms",
       title: t('techIntegration')
     },
     {
       id: 12,
-      src: "assets/theater.png",
+      src: "/assets/theater.png",
       alt: t('musicConcert'),
       category: "activities",
       title: t('musicConcert')

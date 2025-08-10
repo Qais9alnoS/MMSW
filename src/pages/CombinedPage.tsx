@@ -167,7 +167,7 @@ const CombinedPage = () => {
       category: "Academic",
       categoryAr: "أكاديمي",
       description: t('scienceFairDesc'),
-      image: "assets/biology.png",
+      image: "/assets/biology.png",
       participants: t('participants150'),
       icon: BookOpen
     },
@@ -178,7 +178,7 @@ const CombinedPage = () => {
       category: "Sports",
       categoryAr: "رياضة",
       description: t('sportsDayDesc'),
-      image: "assets/sports.png",
+      image: "/assets/sports.png",
       participants: t('participantsAll'),
       icon: Dumbbell
     },
@@ -189,7 +189,7 @@ const CombinedPage = () => {
       category: "Cultural",
       categoryAr: "ثقافي",
       description: t('culturalFestDesc'),
-      image: "assets/books.png",
+      image: "/assets/books.png",
       participants: t('participants200'),
       icon: Palette
     },
@@ -200,7 +200,7 @@ const CombinedPage = () => {
       category: "Leadership",
       categoryAr: "قيادة",
       description: t('munDesc'),
-      image: "assets/mukhtarday.jpg",
+      image: "/assets/mukhtarday.jpg",
       participants: t('participantsHighSchool'),
       icon: Globe
     },
@@ -211,7 +211,7 @@ const CombinedPage = () => {
       category: "Arts",
       categoryAr: "فنون",
       description: t('artsShowcaseDesc'),
-      image: "assets/art.png",
+      image: "/assets/art.png",
       participants: t('participants80'),
       icon: Music
     },
@@ -222,7 +222,7 @@ const CombinedPage = () => {
       category: "Academic",
       categoryAr: "أكاديمي",
       description: t('mathOlympiadDesc'),
-      image: "assets/chess.jpg",
+      image: "/assets/chess.jpg",
       participants: t('participants30'),
       icon: Trophy
     }
