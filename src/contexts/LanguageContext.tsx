@@ -510,7 +510,7 @@ const translations = {
     // School History
     historyParagraph1: 'Founded in 2011, Al-Mukhtar Model Schools began as a vision to provide exceptional educational opportunities for students in Damascus. Starting with just 50 students and 10 teachers, we have grown into one of Syria\'s most respected private educational institutions.',
     historyParagraph2: 'Our journey has been marked by continuous improvement and innovation in teaching methodologies, infrastructure development, and student achievement. We have consistently maintained high academic standards while adapting to modern educational needs.',
-    historyParagraph3: 'Today, we proudly serve over 1700 students across all educational levels, from Kindergarten to High School, with a dedicated team of qualified educators and staff members committed to excellence in education.'
+    historyParagraph3: 'Today, we proudly serve over 1700 students across all educational levels, from Kindergarten to High School, with a dedicated team of qualified educators and staff members committed to excellence in education.',
     
     // About Section
     aboutTitle: 'About Us',
