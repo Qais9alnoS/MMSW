@@ -264,10 +264,10 @@ const CombinedPage = () => {
 
   // About page data
   const stats = [
-    { label: "Years of Excellence", value: "15+", icon: Target },
-    { label: "Students", value: "500+", icon: Users },
-    { label: "Teachers", value: "50+", icon: BookOpen },
-    { label: "Graduates", value: "1000+", icon: Target },
+    { label: "Years of Excellence", value: "10+", icon: Target },
+    { label: "Students", value: "1700+", icon: Users },
+    { label: "Teachers", value: "90+", icon: BookOpen },
+    { label: "Graduates", value: "1700+", icon: Target },
   ];
 
   const staff = [
@@ -366,19 +366,19 @@ const CombinedPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <ScrollReveal delay={0} origin="bottom" distance="30px" scale={0.9} duration={700}>
               <div className="transform transition-all duration-300 hover:scale-110">
-                <div className="text-4xl font-bold text-primary mb-2">15+</div>
+                <div className="text-4xl font-bold text-primary mb-2">10+</div>
                 <div className={`text-muted-foreground ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('yearsOfExcellence')}</div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150} origin="bottom" distance="30px" scale={0.9} duration={700}>
               <div className="transform transition-all duration-300 hover:scale-110">
-                <div className="text-4xl font-bold text-primary mb-2">500+</div>
+                <div className="text-4xl font-bold text-primary mb-2">1700+</div>
                 <div className={`text-muted-foreground ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('students')}</div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={300} origin="bottom" distance="30px" scale={0.9} duration={700}>
               <div className="transform transition-all duration-300 hover:scale-110">
-                <div className="text-4xl font-bold text-primary mb-2">50+</div>
+                <div className="text-4xl font-bold text-primary mb-2">90+</div>
                 <div className={`text-muted-foreground ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('teachers')}</div>
               </div>
             </ScrollReveal>
@@ -456,7 +456,7 @@ const CombinedPage = () => {
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
                     <Target className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">15+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">10+</div>
                     <div className="text-sm text-muted-foreground">{t('yearsOfExcellence')}</div>
                   </CardContent>
                 </Card>
@@ -465,7 +465,7 @@ const CombinedPage = () => {
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
                     <Users className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">1700+</div>
                     <div className="text-sm text-muted-foreground">{t('students')}</div>
                   </CardContent>
                 </Card>
@@ -474,7 +474,7 @@ const CombinedPage = () => {
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
                     <BookOpen className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">50+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">90+</div>
                     <div className="text-sm text-muted-foreground">{t('teachers')}</div>
                   </CardContent>
                 </Card>
@@ -483,7 +483,7 @@ const CombinedPage = () => {
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
                     <Target className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">1000+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">1700+</div>
                     <div className="text-sm text-muted-foreground">{t('graduates')}</div>
                   </CardContent>
                 </Card>

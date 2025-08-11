@@ -78,13 +78,13 @@ const translations = {
     leadershipTeam: 'فريق الإدارة',
     
     // School History
-    historyParagraph1: 'تأسست مدارس المختار النموذجية في عام 2009 كرؤية لتوفير فرص تعليمية استثنائية للطلاب في دمشق. بدأنا بـ 50 طالبًا و10 معلمين فقط، ونمونا لنصبح واحدة من أكثر المؤسسات التعليمية الخاصة احترامًا في سوريا.',
+    historyParagraph1: 'تأسست مدارس المختار النموذجية في عام 2011 كرؤية لتوفير فرص تعليمية استثنائية للطلاب في دمشق. بدأنا بـ 50 طالبًا و10 معلمين فقط، ونمونا لنصبح واحدة من أكثر المؤسسات التعليمية الخاصة احترامًا في سوريا.',
     historyParagraph2: 'تميزت رحلتنا بالتحسين المستمر والابتكار في منهجيات التدريس وتطوير البنية التحتية وإنجازات الطلاب. لقد حافظنا باستمرار على معايير أكاديمية عالية مع التكيف مع الاحتياجات التعليمية الحديثة.',
-    historyParagraph3: 'اليوم، نخدم بفخر أكثر من 500 طالب عبر جميع المستويات التعليمية، من رياض الأطفال إلى المدرسة الثانوية، مع فريق متفاني من المعلمين المؤهلين وأعضاء هيئة التدريس الملتزمين بالتميز في التعليم.',
+    historyParagraph3: 'اليوم، نخدم بفخر أكثر من 1700 طالب عبر جميع المستويات التعليمية، من رياض الأطفال إلى المدرسة الثانوية، مع فريق متفاني من المعلمين المؤهلين وأعضاء هيئة التدريس الملتزمين بالتميز في التعليم.',
     
     // About Section
     aboutTitle: 'من نحن',
-    aboutDescription: 'مدارس المختار النموذجية مؤسسة تعليمية رائدة تأسست عام 2010 بهدف تقديم تعليم متميز يجمع بين التميز الأكاديمي والقيم الإسلامية',
+    aboutDescription: 'مدارس المختار النموذجية مؤسسة تعليمية رائدة تأسست عام 2011 بهدف تقديم تعليم متميز يجمع بين التميز الأكاديمي والقيم الإسلامية',
     mission: 'رسالتنا',
     missionText: 'تقديم تعليم متميز يجمع بين التميز الأكاديمي والقيم الإسلامية لتخريج أجيال قادرة على مواجهة تحديات المستقبل',
     vision: 'رؤيتنا',
@@ -151,7 +151,7 @@ const translations = {
   flexibleSchedule: 'جدول مرن',
   flexibleScheduleDesc: 'جدول يومي متوازن مع المواد الأكاديمية والأنشطة وفترات الراحة',
   smallClassSizes: 'فصول صغيرة',
-  smallClassSizesDesc: 'بحد أقصى 20 طالبًا في الفصل لضمان الاهتمام والدعم الفردي',
+  smallClassSizesDesc: 'بحد أقصى 30 طالبًا في الفصل لضمان الاهتمام والدعم الفردي',
   excellenceFocus: 'التركيز على التميز',
   excellenceFocusDesc: 'الالتزام بالتميز الأكاديمي وتنمية الشخصية',
   
@@ -508,13 +508,13 @@ const translations = {
     leadershipTeam: 'Leadership Team',
     
     // School History
-    historyParagraph1: 'Founded in 2009, Al-Mukhtar Model Schools began as a vision to provide exceptional educational opportunities for students in Damascus. Starting with just 50 students and 10 teachers, we have grown into one of Syria\'s most respected private educational institutions.',
+    historyParagraph1: 'Founded in 2011, Al-Mukhtar Model Schools began as a vision to provide exceptional educational opportunities for students in Damascus. Starting with just 50 students and 10 teachers, we have grown into one of Syria\'s most respected private educational institutions.',
     historyParagraph2: 'Our journey has been marked by continuous improvement and innovation in teaching methodologies, infrastructure development, and student achievement. We have consistently maintained high academic standards while adapting to modern educational needs.',
-    historyParagraph3: 'Today, we proudly serve over 500 students across all educational levels, from Kindergarten to High School, with a dedicated team of qualified educators and staff members committed to excellence in education.',
+    historyParagraph3: 'Today, we proudly serve over 1700 students across all educational levels, from Kindergarten to High School, with a dedicated team of qualified educators and staff members committed to excellence in education.'
     
     // About Section
     aboutTitle: 'About Us',
-    aboutDescription: 'Al-Mukhtar Model Schools is a leading educational institution established in 2010 with the aim of providing distinguished education that combines academic excellence and Islamic values',
+    aboutDescription: 'Al-Mukhtar Model Schools is a leading educational institution established in 2011 with the aim of providing distinguished education that combines academic excellence and Islamic values',
     mission: 'Our Mission',
     missionText: 'To provide distinguished education that combines academic excellence and Islamic values, fostering a learning environment that empowers students to develop critical thinking, strong character, and the skills needed to excel in an ever-changing world and face future challenges with confidence',
     vision: 'Our Vision', 
