@@ -23,7 +23,7 @@ const App = () => (
         <BrowserRouter>
           <div className="min-h-screen flex flex-col">
             <Header />
-            <main className="flex-1">
+            <main className="flex-1 pt-16 md:pt-20">
               <Routes>
               <Route path="/" element={<CombinedPage />} />
               <Route path="/gallery" element={<Gallery />} />
