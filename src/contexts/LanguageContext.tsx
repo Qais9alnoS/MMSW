@@ -55,9 +55,9 @@ const translations = {
     
     // Gallery Image Titles
     modernClassroom: 'الصف الحديث',
-    scienceLaboratory: 'مختبر العلوم',
+    scienceLaboratory: 'يوم المسرح',
     sportsDayActivity: 'اليوم الرياضي',
-    graduation: 'التخرج 2024',
+    graduation: 'التخرج 2025',
     artWorkshop: 'ورشة الفنون',
     schoolLibrary: 'مكتبة المدرسة',
     groupStudy: 'الدراسة الجماعية',
@@ -65,7 +65,7 @@ const translations = {
     scienceFairActivity: 'مخبر العلوم',
     computerLab: 'مختبر الحاسوب',
     techIntegration: 'التعلم التقني',
-    musicConcert: 'الحفل الموسيقي',
+    musicConcert: 'حديقة اللعب',
     
     // Hero Section
     heroTitle: 'مدارس المختار النموذجية',
@@ -485,9 +485,9 @@ const translations = {
     
     // Gallery Image Titles
     modernClassroom: 'Modern Classroom',
-    scienceLaboratory: 'Science Laboratory',
+    scienceLaboratory: 'Theater Day',
     sportsDayActivity: 'Sports Day',
-    graduation: 'Graduation 2024',
+    graduation: 'Graduation 2025',
     artWorkshop: 'Art Workshop',
     schoolLibrary: 'School Library',
     groupStudy: 'Group Study',
@@ -495,7 +495,7 @@ const translations = {
     scienceFairActivity: 'Science Fair',
     computerLab: 'Computer Lab',
     techIntegration: 'Tech Integration',
-    musicConcert: 'Music Concert',
+    musicConcert: 'School playground',
     
     // Hero Section
     heroTitle: 'Al-Mukhtar Model Schools',
@@ -718,7 +718,7 @@ const translations = {
      roboticsCompetition: 'Robotics Competition',
      summerCamp: 'Summer Camp',
      artExhibition: 'Art Exhibition',
-     bestSchoolAward: 'Best School Award 2024',
+     bestSchoolAward: 'Best School Award 2025',
     graduationRate: 'High School Graduation Rate',
     scholarshipsAwarded: 'University Scholarships Awarded',
     sports: 'Sports',

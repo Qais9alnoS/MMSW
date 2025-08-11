@@ -71,14 +71,14 @@ const Gallery = () => {
     },
     {
       id: 6,
-      src: "/assets/books.png",
+      src: "/assets/lib.jpg",
       alt: t('schoolLibrary'),
       category: "facilities",
       title: t('schoolLibrary')
     },
     {
       id: 7,
-      src: "/assets/students.png",
+      src: "/assets/students.jpg",
       alt: t('groupStudy'),
       category: "students",
       title: t('groupStudy')
@@ -99,21 +99,21 @@ const Gallery = () => {
     },
     {
       id: 10,
-      src: "/assets/pclab.png",
+      src: "/assets/pclab.jpg",
       alt: t('computerLab'),
       category: "facilities",
       title: t('computerLab')
     },
     {
       id: 11,
-      src: "/assets/tech.png",
+      src: "/assets/tech.jpg",
       alt: t('techIntegration'),
       category: "classrooms",
       title: t('techIntegration')
     },
     {
       id: 12,
-      src: "/assets/theater.png",
+      src: "/assets/park.jpg",
       alt: t('musicConcert'),
       category: "activities",
       title: t('musicConcert')
