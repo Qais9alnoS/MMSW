@@ -1,9 +1,31 @@
 import { Facebook, Instagram, Send, Phone, Mail, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const { t, isRTL } = useLanguage();
+  const location = useLocation();
+
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    // If we're on the home page, scroll to section
+    if (location.pathname === '/') {
+      const targetId = href.substring(href.indexOf('#') + 1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const headerHeight = 80; // Approximate height of the fixed header
+        const targetPosition = targetElement.offsetTop - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // If we're on another page, navigate to home page with hash
+      window.location.href = href;
+    }
+  };
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -31,19 +53,31 @@ const Footer = () => {
             <h3 className={`text-lg font-semibold mb-4 ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className={`text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>
+                <a 
+                  href="/#about" 
+                  onClick={(e) => handleScrollToSection(e, "/#about")}
+                  className={`text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors ${isRTL ? 'font-cairo' : 'font-open-sans'} cursor-pointer`}
+                >
                   {t('about')}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/programs" className={`text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>
+                <a 
+                  href="/#programs" 
+                  onClick={(e) => handleScrollToSection(e, "/#programs")}
+                  className={`text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors ${isRTL ? 'font-cairo' : 'font-open-sans'} cursor-pointer`}
+                >
                   {t('programs')}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/activities" className={`text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>
+                <a 
+                  href="/#activities" 
+                  onClick={(e) => handleScrollToSection(e, "/#activities")}
+                  className={`text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors ${isRTL ? 'font-cairo' : 'font-open-sans'} cursor-pointer`}
+                >
                   {t('activitiesNav')}
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/enrollment" className={`text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>
