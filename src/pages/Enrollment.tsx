@@ -38,32 +38,52 @@ const Enrollment = () => {
     setFormData(prev => ({ ...prev, agreeToTerms: checked }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
     
-    // Show success message
-    toast({
-      title: t('successTitle'),
-      description: t('successMessage'),
-      variant: 'default',
-    });
-    
-    // Reset form
-    setFormData({
-      studentName: '',
-      dateOfBirth: '',
-      gender: '',
-      grade: '',
-      parentName: '',
-      email: '',
-      phone: '',
-      address: '',
-      previousSchool: '',
-      message: '',
-      agreeToTerms: false,
-    });
+    try {
+      // Submit enrollment data to backend
+      const enrollmentData = {
+        ...formData,
+        submittedAt: new Date().toISOString(),
+        status: 'pending',
+      };
+
+      // In a real app, use the API service
+      // await enrollmentApi.submitEnrollment(enrollmentData);
+      
+      // For now, simulate API call
+      console.log('Submitting enrollment:', enrollmentData);
+      
+      // Show success message
+      toast({
+        title: t('successTitle'),
+        description: t('successMessage'),
+        variant: 'default',
+      });
+      
+      // Reset form
+      setFormData({
+        studentName: '',
+        dateOfBirth: '',
+        gender: '',
+        grade: '',
+        parentName: '',
+        email: '',
+        phone: '',
+        address: '',
+        previousSchool: '',
+        message: '',
+        agreeToTerms: false,
+      });
+    } catch (error) {
+      console.error('Error submitting enrollment:', error);
+      toast({
+        title: t('errorTitle'),
+        description: t('errorMessage'),
+        variant: 'destructive',
+      });
+    }
   };
 
   return (

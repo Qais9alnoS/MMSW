@@ -5,9 +5,65 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Send } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useState } from "react";
 
 const Contact = () => {
   const { t } = useLanguage();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      // Create new message object
+      const newMessage = {
+        id: Date.now().toString(),
+        ...formData,
+        date: new Date().toISOString().split('T')[0],
+        status: 'new' as const
+      };
+
+      // Get existing messages or initialize empty array
+      const existingMessages = JSON.parse(localStorage.getItem('messages') || '[]');
+      
+      // Add new message
+      existingMessages.push(newMessage);
+      
+      // Save back to localStorage
+      localStorage.setItem('messages', JSON.stringify(existingMessages));
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+      
+      setSubmitMessage(t('messageSentSuccessfully'));
+      setTimeout(() => setSubmitMessage(''), 3000);
+    } catch (error) {
+      setSubmitMessage(t('errorSendingMessage'));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background font-open-sans">
       {/* Hero Section */}
@@ -129,35 +185,72 @@ const Contact = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
+                  {submitMessage && (
+                    <div className={`p-3 rounded-md text-sm ${submitMessage.includes(t('error')) ? 'bg-destructive/10 text-destructive' : 'bg-green-100 text-green-800'}`}>
+                      {submitMessage}
+                    </div>
+                  )}
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium mb-2 font-open-sans">{t('yourName')}</label>
-                      <Input placeholder={t('yourFullName')} />
+                      <Input 
+                        name="name" 
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder={t('yourFullName')} 
+                        required
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2 font-open-sans">{t('emailAddress')}</label>
-                      <Input type="email" placeholder={t('yourEmail')} />
+                      <Input 
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder={t('yourEmail')} 
+                        required
+                      />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2 font-open-sans">{t('phoneNumber')}</label>
-                    <Input placeholder={t('yourPhone')} />
+                    <Input 
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder={t('yourPhone')} 
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2 font-open-sans">{t('messageSubject')}</label>
-                    <Input placeholder={t('messageSubject')} />
+                    <Input 
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      placeholder={t('messageSubject')} 
+                      required
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2 font-open-sans">{t('message')}</label>
                     <Textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder={t('yourMessage')} 
                       rows={5}
                       className="resize-none"
+                      required
                     />
                   </div>
-                  <Button className="w-full bg-accent hover:bg-accent-light text-accent-foreground">
-                    {t('sendMessage')}
+                  <Button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-accent hover:bg-accent-light text-accent-foreground"
+                  >
+                    {isSubmitting ? t('sending') : t('sendMessage')}
                   </Button>
                 </form>
               </CardContent>

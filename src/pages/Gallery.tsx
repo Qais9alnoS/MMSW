@@ -272,7 +272,7 @@ const Gallery = () => {
                   <ScrollReveal delay={400} origin="bottom" distance="20px" duration={700}>
                     <div>
                       <Users className="h-8 w-8 text-secondary mx-auto mb-2" />
-                      <div className="text-2xl font-bold text-primary">500+</div>
+                      <div className="text-2xl font-bold text-primary">1700+</div>
                       <div className="text-sm text-muted-foreground">{t('students')}</div>
                     </div>
                   </ScrollReveal>

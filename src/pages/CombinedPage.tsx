@@ -44,43 +44,28 @@ const CombinedPage = () => {
         }, 100);
       }
     }
+
+    // Track website visits
+    const trackVisit = () => {
+      try {
+        const currentVisits = parseInt(localStorage.getItem('websiteVisits') || '0');
+        localStorage.setItem('websiteVisits', (currentVisits + 1).toString());
+      } catch (error) {
+        console.error('Error tracking visit:', error);
+      }
+    };
+
+    trackVisit();
   }, []);
 
   // Programs data
   const programs = [
     {
-      id: "kindergarten",
-      title: "Kindergarten",
-      titleAr: "رياض الأطفال",
-      ageGroup: "3-5 years",
-      ageGroupAr: "3-5 سنوات",
-      icon: Baby,
-      color: "text-pink-500",
-      bgColor: "bg-pink-50",
-      description: t('kindergartenDescription'),
-      features: [
-        t('kindergartenFeature1'),
-        t('kindergartenFeature2'),
-        t('kindergartenFeature3'),
-        t('kindergartenFeature4'),
-        t('kindergartenFeature5'),
-        t('kindergartenFeature6')
-      ],
-      subjects: [
-        { name: t('english'), icon: Globe },
-        { name: t('arabic'), icon: BookOpen },
-        { name: t('math'), icon: Calculator },
-        { name: t('arts'), icon: Palette },
-        { name: t('music'), icon: Music },
-        { name: t('physicalEducation'), icon: Heart }
-      ]
-    },
-    {
       id: "elementary",
       title: "Elementary School",
       titleAr: "المرحلة الابتدائية",
-      ageGroup: "6-11 years",
-      ageGroupAr: "6-11 سنة",
+      ageGroup: "6-10 years",
+      ageGroupAr: "6-10 سنة",
       icon: BookOpen,
       color: "text-blue-500",
       bgColor: "bg-blue-50",
@@ -106,8 +91,8 @@ const CombinedPage = () => {
       id: "middle",
       title: "Middle School",
       titleAr: "المرحلة الإعدادية",
-      ageGroup: "12-14 years",
-      ageGroupAr: "12-14 سنة",
+      ageGroup: "11-14 years",
+      ageGroupAr: "11-14 سنة",
       icon: Users,
       color: "text-green-500",
       bgColor: "bg-green-50",
@@ -264,8 +249,8 @@ const CombinedPage = () => {
 
   // About page data
   const stats = [
-    { label: "Years of Excellence", value: "10+", icon: Target },
-    { label: "Students", value: "1700+", icon: Users },
+    { label: "Years of Excellence", value: "15+", icon: Target },
+    { label: "Students", value: "1850+", icon: Users },
     { label: "Teachers", value: "90+", icon: BookOpen },
     { label: "Graduates", value: "1700+", icon: Target },
   ];
@@ -366,13 +351,13 @@ const CombinedPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <ScrollReveal delay={0} origin="bottom" distance="30px" scale={0.9} duration={700}>
               <div className="transform transition-all duration-300 hover:scale-110">
-                <div className="text-4xl font-bold text-primary mb-2">10+</div>
+                <div className="text-4xl font-bold text-primary mb-2">15+</div>
                 <div className={`text-muted-foreground ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('yearsOfExcellence')}</div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150} origin="bottom" distance="30px" scale={0.9} duration={700}>
               <div className="transform transition-all duration-300 hover:scale-110">
-                <div className="text-4xl font-bold text-primary mb-2">1700+</div>
+                <div className="text-4xl font-bold text-primary mb-2">1850+</div>
                 <div className={`text-muted-foreground ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('students')}</div>
               </div>
             </ScrollReveal>
@@ -384,7 +369,7 @@ const CombinedPage = () => {
             </ScrollReveal>
             <ScrollReveal delay={450} origin="bottom" distance="30px" scale={0.9} duration={700}>
               <div className="transform transition-all duration-300 hover:scale-110">
-                <div className="text-4xl font-bold text-primary mb-2">100%</div>
+                <div className="text-4xl font-bold text-primary mb-2">3+</div>
                 <div className={`text-muted-foreground ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('successRate')}</div>
               </div>
             </ScrollReveal>
@@ -456,7 +441,7 @@ const CombinedPage = () => {
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
                     <Target className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">10+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">15+</div>
                     <div className="text-sm text-muted-foreground">{t('yearsOfExcellence')}</div>
                   </CardContent>
                 </Card>
@@ -465,7 +450,7 @@ const CombinedPage = () => {
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
                     <Users className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">1700+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">1850+</div>
                     <div className="text-sm text-muted-foreground">{t('students')}</div>
                   </CardContent>
                 </Card>
@@ -483,7 +468,7 @@ const CombinedPage = () => {
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
                     <Target className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">1700+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">50+</div>
                     <div className="text-sm text-muted-foreground">{t('graduates')}</div>
                   </CardContent>
                 </Card>
@@ -530,7 +515,7 @@ const CombinedPage = () => {
                 {isRTL ? 'فريق الإدارة' : 'Leadership Team'}
               </h2>
             </ScrollReveal>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {staff.map((member, index) => (
                 <ScrollReveal 
                   key={member.name} 
@@ -551,9 +536,11 @@ const CombinedPage = () => {
                       <Badge variant="secondary" className={`mb-2 ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>
                         {isRTL ? member.roleAr : member.role}
                       </Badge>
-                      <p className="text-sm text-muted-foreground font-open-sans">
-                        {t(member.qualificationKey)}
-                      </p>
+                      {member.qualificationKey && (
+                        <p className="text-sm text-muted-foreground font-open-sans">
+                          {t(member.qualificationKey)}
+                        </p>
+                      )}
                     </CardContent>
                   </Card>
                 </ScrollReveal>
@@ -573,7 +560,7 @@ const CombinedPage = () => {
                 <CardContent className="p-0">
                   <div className="aspect-video w-full">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.7!2d36.30206!3d33.48949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI5JzIyLjIiTiAzNsKwMTgnMDcuNCJF!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.7!2d36.30206!3d!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI5JzIyLjIiTiAzNsKwMTgnMDcuNCJF!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -902,46 +889,7 @@ const CombinedPage = () => {
             </div>
           </section>
 
-          {/* Achievement Highlights */}
-          <section className="mt-16">
-            <ScrollReveal delay={0}>
-              <Card className="border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-center text-primary font-cairo">
-                    {t('recentAchievements')}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <ScrollReveal delay={200}>
-                      <div>
-                        <Trophy className="h-12 w-12 text-secondary mx-auto mb-3" />
-                        <h4 className="font-semibold text-primary mb-2 font-cairo">
-                          {t('bestSchoolAward')}
-                        </h4>
-                      </div>
-                    </ScrollReveal>
-                    <ScrollReveal delay={400}>
-                      <div>
-                        <Users className="h-12 w-12 text-secondary mx-auto mb-3" />
-                        <h4 className="font-semibold text-primary mb-2 font-cairo">
-                          {t('graduationRate')}
-                        </h4>
-                      </div>
-                    </ScrollReveal>
-                    <ScrollReveal delay={600}>
-                      <div>
-                        <BookOpen className="h-12 w-12 text-secondary mx-auto mb-3" />
-                        <h4 className="font-semibold text-primary mb-2 font-cairo">
-                          {t('scholarshipsAwarded')}
-                        </h4>
-                      </div>
-                    </ScrollReveal>
-                  </div>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-          </section>
+
 
 
         </div>
