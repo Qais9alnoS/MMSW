@@ -12,7 +12,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 interface AdminLayoutProps {
   children: React.ReactNode;
-  pageTitle: string;
+  pageTitle?: string;
 }
 
 const AdminLayout: React.FC<AdminLayoutProps> = ({ children, pageTitle }) => {
@@ -171,7 +171,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, pageTitle }) => {
       </div>
 
       {/* Main content */}
-      <div className={`lg:ml-72 ${language === 'ar' ? 'lg:mr-72 lg:ml-0' : ''}`}>
+      <div className="lg:ml-72">
         {/* Header */}
         <header className="bg-white/95 backdrop-blur-sm border-b border-slate-200 dark:bg-slate-900/95 dark:border-slate-700 sticky top-0 z-30">
           <div className="flex items-center justify-between px-6 py-4">
