@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Send, Phone, Mail, MapPin } from "lucide-react";
+import { Facebook, Phone, MapPin } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -33,7 +33,7 @@ const Footer = () => {
           {/* School Info */}
           <div>
             <img
-              src="/assets/logoM.jpg"
+              src="https://i.postimg.cc/bJJWZVVC/logoM.png"
               alt="Al-Mukhtar Model Schools"
               className="h-16 w-auto mb-4"
             />
@@ -103,12 +103,7 @@ const Footer = () => {
                   {t('schoolPhone')}
                 </span>
               </li>
-              <li className="flex items-center space-x-3 rtl:space-x-reverse">
-                <Mail className="h-4 w-4 flex-shrink-0" />
-                <span className={`text-sm text-primary-foreground/80 ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>
-                  {t('schoolEmail')}
-                </span>
-              </li>
+
             </ul>
           </div>
 
@@ -125,20 +120,7 @@ const Footer = () => {
               >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a
-                href="#"
-                className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
-                aria-label={t('instagram')}
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
-                aria-label={t('telegram')}
-              >
-                <Send className="h-5 w-5" />
-              </a>
+
             </div>
           </div>
         </div>

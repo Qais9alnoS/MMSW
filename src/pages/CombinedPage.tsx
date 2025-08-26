@@ -20,6 +20,7 @@ import {
   Dumbbell,
   Camera
 } from "lucide-react";
+import { AnimatedCounter } from '../components/AnimatedCounter';
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -62,8 +63,8 @@ const CombinedPage = () => {
   const programs = [
     {
       id: "elementary",
-      title: "Elementary School",
-      titleAr: "المرحلة الابتدائية",
+      title: "First Cycle",
+      titleAr: "الحلقة الأولى",
       ageGroup: "6-10 years",
       ageGroupAr: "6-10 سنة",
       icon: BookOpen,
@@ -89,8 +90,8 @@ const CombinedPage = () => {
     },
     {
       id: "middle",
-      title: "Middle School",
-      titleAr: "المرحلة الإعدادية",
+      title: "Second Cycle",
+      titleAr: "الحلقة الثانية",
       ageGroup: "11-14 years",
       ageGroupAr: "11-14 سنة",
       icon: Users,
@@ -116,8 +117,8 @@ const CombinedPage = () => {
     },
     {
       id: "high",
-      title: "High School",
-      titleAr: "المرحلة الثانوية",
+      title: "Third Cycle",
+      titleAr: "الحلقة الثالثة",
       ageGroup: "15-18 years",
       ageGroupAr: "15-18 سنة",
       icon: GraduationCap,
@@ -152,7 +153,7 @@ const CombinedPage = () => {
       category: "Academic",
       categoryAr: "أكاديمي",
       description: t('scienceFairDesc'),
-      image: "/assets/biology.png",
+      image: "https://i.postimg.cc/cLvc8yd8/biology.png",
       participants: t('participants150'),
       icon: BookOpen
     },
@@ -163,7 +164,7 @@ const CombinedPage = () => {
       category: "Sports",
       categoryAr: "رياضة",
       description: t('sportsDayDesc'),
-      image: "/assets/sports.png",
+      image: "https://i.postimg.cc/CL94khmp/sports.png",
       participants: t('participantsAll'),
       icon: Dumbbell
     },
@@ -174,7 +175,7 @@ const CombinedPage = () => {
       category: "Cultural",
       categoryAr: "ثقافي",
       description: t('culturalFestDesc'),
-      image: "/assets/books.png",
+      image: "https://i.postimg.cc/nnLxwddj/books.png",
       participants: t('participants200'),
       icon: Palette
     },
@@ -185,7 +186,7 @@ const CombinedPage = () => {
       category: "Leadership",
       categoryAr: "قيادة",
       description: t('munDesc'),
-      image: "/assets/mukhtarday.jpg",
+      image: "https://i.postimg.cc/8CJT7bKb/mukhtarday.jpg",
       participants: t('participantsHighSchool'),
       icon: Globe
     },
@@ -196,7 +197,7 @@ const CombinedPage = () => {
       category: "Arts",
       categoryAr: "فنون",
       description: t('artsShowcaseDesc'),
-      image: "/assets/art.png",
+      image: "https://i.postimg.cc/1zSFWjgP/art.png",
       participants: t('participants80'),
       icon: Music
     },
@@ -207,7 +208,7 @@ const CombinedPage = () => {
       category: "Academic",
       categoryAr: "أكاديمي",
       description: t('mathOlympiadDesc'),
-      image: "/assets/chess.jpg",
+      image: "https://i.postimg.cc/sgjmc653/chess.jpg",
       participants: t('participants30'),
       icon: Trophy
     }
@@ -286,7 +287,7 @@ const CombinedPage = () => {
         {/* School image background */}
         <div className="absolute inset-0">
           <img 
-            src="/assets/school.png" 
+            src="https://i.postimg.cc/Zn5FwDM0/school.png" 
             alt="School Building" 
             className="w-full h-full object-cover"
           />
@@ -296,7 +297,7 @@ const CombinedPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal delay={0} scale={0.8} duration={800} easing="ease-in-out">
             <img
-              src="/assets/logoM.jpg"
+              src="https://i.postimg.cc/bJJWZVVC/logoM.png"
               alt="Al-Mukhtar Model Schools"
               className="h-24 w-auto mx-auto mb-8"
             />
@@ -351,25 +352,33 @@ const CombinedPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <ScrollReveal delay={0} origin="bottom" distance="30px" scale={0.9} duration={700}>
               <div className="transform transition-all duration-300 hover:scale-110">
-                <div className="text-4xl font-bold text-primary mb-2">15+</div>
+                <div className="text-4xl font-bold text-primary mb-2">
+                   <AnimatedCounter targetValue={15} suffix="+" className="text-4xl font-bold text-primary" />
+                 </div>
                 <div className={`text-muted-foreground ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('yearsOfExcellence')}</div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150} origin="bottom" distance="30px" scale={0.9} duration={700}>
               <div className="transform transition-all duration-300 hover:scale-110">
-                <div className="text-4xl font-bold text-primary mb-2">1850+</div>
+                <div className="text-4xl font-bold text-primary mb-2">
+                   <AnimatedCounter targetValue={1850} suffix="+" className="text-4xl font-bold text-primary" />
+                 </div>
                 <div className={`text-muted-foreground ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('students')}</div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={300} origin="bottom" distance="30px" scale={0.9} duration={700}>
               <div className="transform transition-all duration-300 hover:scale-110">
-                <div className="text-4xl font-bold text-primary mb-2">90+</div>
+                <div className="text-4xl font-bold text-primary mb-2">
+                   <AnimatedCounter targetValue={90} suffix="+" className="text-4xl font-bold text-primary" />
+                 </div>
                 <div className={`text-muted-foreground ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('teachers')}</div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={450} origin="bottom" distance="30px" scale={0.9} duration={700}>
               <div className="transform transition-all duration-300 hover:scale-110">
-                <div className="text-4xl font-bold text-primary mb-2">3+</div>
+                <div className="text-4xl font-bold text-primary mb-2">
+                   <AnimatedCounter targetValue={3} suffix="+" className="text-4xl font-bold text-primary" />
+                 </div>
                 <div className={`text-muted-foreground ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>{t('successRate')}</div>
               </div>
             </ScrollReveal>
@@ -429,47 +438,62 @@ const CombinedPage = () => {
             </ScrollReveal>
           </div>
 
-          {/* Statistics */}
+          {/* Our Achievements */}
           <section className="mb-16">
             <ScrollReveal delay={0} origin="bottom" distance="40px" duration={800}>
               <h2 className={`text-3xl font-bold text-center mb-12 text-primary ${isRTL ? 'font-cairo' : ''}`}>
                 {isRTL ? 'إنجازاتنا' : 'Our Achievements'}
               </h2>
             </ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <ScrollReveal delay={100} origin="bottom" distance="30px" scale={0.95} duration={600}>
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
-                    <Target className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">15+</div>
-                    <div className="text-sm text-muted-foreground">{t('yearsOfExcellence')}</div>
+                    <BookOpen className="h-8 w-8 text-secondary mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-primary mb-2">{isRTL ? 'جائزة في القراءة' : 'Reading Excellence Award'}</div>
+                    <div className="text-sm text-muted-foreground">{isRTL ? 'جائزة التميز في القراءة' : 'Reading Excellence Award'}</div>
                   </CardContent>
                 </Card>
               </ScrollReveal>
               <ScrollReveal delay={200} origin="bottom" distance="30px" scale={0.95} duration={600}>
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
-                    <Users className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">1850+</div>
-                    <div className="text-sm text-muted-foreground">{t('students')}</div>
+                    <Palette className="h-8 w-8 text-secondary mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-primary mb-2">{isRTL ? 'جائزة في كتابة القصة القصيرة' : 'Short Story Writing Award'}</div>
+                    <div className="text-sm text-muted-foreground">{isRTL ? 'جائزة الإبداع في الكتابة' : 'Creative Writing Award'}</div>
                   </CardContent>
                 </Card>
               </ScrollReveal>
-              <ScrollReveal delay={300} origin="bottom" distance="30px" scale={0.95} duration={600}>
+            </div>
+          </section>
+
+          {/* Our Graduates */}
+          <section className="mb-16">
+            <ScrollReveal delay={0} origin="bottom" distance="40px" duration={800}>
+              <h2 className={`text-3xl font-bold text-center mb-12 text-primary ${isRTL ? 'font-cairo' : ''}`}>
+                {isRTL ? 'خريجونا' : 'Our Graduates'}
+              </h2>
+            </ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <ScrollReveal delay={100} origin="bottom" distance="30px" scale={0.95} duration={600}>
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
-                    <BookOpen className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">90+</div>
-                    <div className="text-sm text-muted-foreground">{t('teachers')}</div>
+                    <GraduationCap className="h-8 w-8 text-secondary mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-primary mb-2">
+                       <AnimatedCounter targetValue={15} prefix="+" className="text-3xl font-bold text-primary" />
+                     </div>
+                    <div className="text-sm text-muted-foreground">{isRTL ? 'أطباء' : 'Doctors'}</div>
                   </CardContent>
                 </Card>
               </ScrollReveal>
-              <ScrollReveal delay={400} origin="bottom" distance="30px" scale={0.95} duration={600}>
+              <ScrollReveal delay={200} origin="bottom" distance="30px" scale={0.95} duration={600}>
                 <Card className="text-center border-secondary/20 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
                     <Target className="h-8 w-8 text-secondary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                    <div className="text-sm text-muted-foreground">{t('graduates')}</div>
+                    <div className="text-3xl font-bold text-primary mb-2">
+                       <AnimatedCounter targetValue={25} prefix="+" className="text-3xl font-bold text-primary" />
+                     </div>
+                    <div className="text-sm text-muted-foreground">{isRTL ? 'مهندسين' : 'Engineers'}</div>
                   </CardContent>
                 </Card>
               </ScrollReveal>
@@ -508,45 +532,7 @@ const CombinedPage = () => {
             </ScrollReveal>
           </section>
 
-          {/* Key Staff */}
-          <section className="mb-16">
-            <ScrollReveal delay={0} origin="top" distance="40px" duration={800}>
-              <h2 className={`text-3xl font-bold text-center mb-12 text-primary ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>
-                {isRTL ? 'فريق الإدارة' : 'Leadership Team'}
-              </h2>
-            </ScrollReveal>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {staff.map((member, index) => (
-                <ScrollReveal 
-                  key={member.name} 
-                  delay={200 * (index + 1)} 
-                  origin={index % 2 === 0 ? "left" : "right"} 
-                  distance="50px" 
-                  duration={800} 
-                  easing="ease-out"
-                >
-                  <Card className="text-center border-accent/20 hover:shadow-lg transition-shadow">
-                    <CardContent className="pt-6">
-                      <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <Users className="h-12 w-12 text-white" />
-                      </div>
-                      <h3 className={`text-xl font-semibold text-primary mb-1 ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>
-                        {isRTL ? member.nameAr : member.name}
-                      </h3>
-                      <Badge variant="secondary" className={`mb-2 ${isRTL ? 'font-cairo' : 'font-open-sans'}`}>
-                        {isRTL ? member.roleAr : member.role}
-                      </Badge>
-                      {member.qualificationKey && (
-                        <p className="text-sm text-muted-foreground font-open-sans">
-                          {t(member.qualificationKey)}
-                        </p>
-                      )}
-                    </CardContent>
-                  </Card>
-                </ScrollReveal>
-              ))}
-            </div>
-          </section>
+
 
           {/* Location */}
           <section>
@@ -560,7 +546,7 @@ const CombinedPage = () => {
                 <CardContent className="p-0">
                   <div className="aspect-video w-full">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.7!2d36.30206!3d!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI5JzIyLjIiTiAzNsKwMTgnMDcuNCJF!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.7!2d36.38000760450303!3d33.44301725025144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI2JzM0LjkiTiAzNsKwMjInNDguMCJF!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -578,7 +564,7 @@ const CombinedPage = () => {
                           {isRTL ? t('schoolNameAr') : t('schoolName')}
                         </p>
                         <p className="text-sm text-muted-foreground font-open-sans">{t('schoolAddress')}</p>
-                        <p className="text-xs text-muted-foreground">33.48949° N, 36.30206° E</p>
+                        <p className="text-xs text-muted-foreground">33.44301725025144° N, 36.38000760450303° E</p>
                       </div>
                     </div>
                   </ScrollReveal>

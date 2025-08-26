@@ -41,7 +41,7 @@ const AdminSettings = () => {
     phone: '+966501234567',
     address: 'حي النرجس، الرياض، المملكة العربية السعودية',
     website: 'https://mukhtarschool.com',
-    logoUrl: '/assets/logoM.svg',
+    logoUrl: 'https://i.postimg.cc/bJJWZVVC/logoM.png',
     primaryColor: '#2563eb',
     secondaryColor: '#f59e0b',
     accentColor: '#8b5cf6',

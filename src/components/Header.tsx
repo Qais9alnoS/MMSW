@@ -49,7 +49,7 @@ const Header = () => {
           {/* Logo */}
           <a href="#home" onClick={(e) => handleScrollToSection(e, "#home")} className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
             <img
-              src="/assets/logoM.jpg"
+              src="https://i.postimg.cc/bJJWZVVC/logoM.png"
               alt={t('schoolName')}
               className="h-14 w-auto"
             />

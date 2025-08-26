@@ -36,84 +36,84 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: "/assets/class.png",
+      src: "https://i.postimg.cc/G2CHFNsQ/class.png",
       alt: t('modernClassroom'),
       category: "classrooms",
       title: t('modernClassroom')
     },
     {
       id: 2,
-      src: "/assets/sciencelab.png",
+      src: "https://i.postimg.cc/vHPBDhL4/theater.png",
       alt: t('scienceLaboratory'),
       category: "facilities",
       title: t('scienceLaboratory')
     },
     {
       id: 3,
-      src: "/assets/sports.png",
+      src: "https://i.postimg.cc/CL94khmp/sports.png",
       alt: t('sportsDay'),
       category: "sports",
       title: t('sportsDay')
     },
     {
       id: 4,
-      src: "/assets/graduation.jpg",
+      src: "https://i.postimg.cc/CLXMCt3q/graduation.jpg",
       alt: t('graduation'),
       category: "events",
       title: t('graduation')
     },
     {
       id: 5,
-      src: "/assets/art.png",
+      src: "https://i.postimg.cc/1zSFWjgP/art.png",
       alt: t('artWorkshop'),
       category: "activities",
       title: t('artWorkshop')
     },
     {
       id: 6,
-      src: "/assets/lib.jpg",
+      src: "https://i.postimg.cc/vBZdwtRy/lib.jpg",
       alt: t('schoolLibrary'),
       category: "facilities",
       title: t('schoolLibrary')
     },
     {
       id: 7,
-      src: "/assets/students.jpg",
+      src: "https://i.postimg.cc/05TnFGJJ/students.jpg",
       alt: t('groupStudy'),
       category: "students",
       title: t('groupStudy')
     },
     {
       id: 8,
-      src: "/assets/chemistrylab.png",
+      src: "https://i.postimg.cc/0QWcMpz9/Arabic.png",
       alt: t('chemistryLab'),
       category: "facilities",
       title: t('chemistryLab')
     },
     {
       id: 9,
-      src: "/assets/biology.png",
+      src: "https://i.postimg.cc/cLvc8yd8/biology.png",
       alt: t('scienceFair'),
       category: "events",
       title: t('scienceFair')
     },
     {
       id: 10,
-      src: "/assets/pclab.jpg",
+      src: "https://i.postimg.cc/FRxPVM1g/pclab.jpg",
       alt: t('computerLab'),
       category: "facilities",
       title: t('computerLab')
     },
     {
       id: 11,
-      src: "/assets/tech.jpg",
+      src: "https://i.postimg.cc/386F0j1b/tech.jpg",
       alt: t('techIntegration'),
       category: "classrooms",
       title: t('techIntegration')
     },
     {
       id: 12,
-      src: "/assets/park.jpg",
+      src: "https://i.postimg.cc/cCgsnBLW/image.png",
       alt: t('musicConcert'),
       category: "activities",
       title: t('musicConcert')

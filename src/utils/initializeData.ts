@@ -30,7 +30,7 @@ export const initializeAdminData = () => {
         titleEn: 'New Academic Year Opening',
         content: 'نرحب بجميع طلابنا الأعزاء في العام الدراسي الجديد 2024-2025',
         contentEn: 'Welcome all our dear students to the new academic year 2024-2025',
-        image: '/assets/school.png',
+        image: 'https://i.postimg.cc/Zn5FwDM0/school.png',
         date: new Date().toISOString(),
         category: 'عام',
         categoryEn: 'General'
@@ -52,7 +52,7 @@ export const initializeAdminData = () => {
         time: '09:00',
         location: 'قاعة المدرسة',
         locationEn: 'School Hall',
-        image: '/assets/mukhtarday.jpg'
+        image: 'https://i.postimg.cc/8CJT7bKb/mukhtarday.jpg'
       }
     ];
     localStorage.setItem('events', JSON.stringify(sampleEvents));
@@ -65,7 +65,7 @@ export const initializeAdminData = () => {
         id: '1',
         title: 'الطلاب في الفصل',
         titleEn: 'Students in Class',
-        image: '/assets/class.png',
+        image: 'https://i.postimg.cc/G2CHFNsQ/class.png',
         description: 'طلابنا في بيئة تعليمية ممتعة',
         descriptionEn: 'Our students in an engaging learning environment',
         category: 'فصول دراسية',
@@ -100,7 +100,7 @@ export const initializeAdminData = () => {
       phone: '+966501234567',
       address: 'حي النرجس، الرياض، المملكة العربية السعودية',
       website: 'https://mukhtarschool.com',
-      logoUrl: '/assets/logoM.svg',
+      logoUrl: 'https://i.postimg.cc/bJJWZVVC/logoM.png',
       primaryColor: '#2563eb',
       secondaryColor: '#f59e0b',
       enableOnlineEnrollment: true,

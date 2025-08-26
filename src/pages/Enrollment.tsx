@@ -24,6 +24,7 @@ const Enrollment = () => {
     message: '',
     agreeToTerms: false,
   });
+  const [showTermsModal, setShowTermsModal] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -251,8 +252,7 @@ const Enrollment = () => {
                         <SelectValue placeholder={t('selectGrade')} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="kg1">{t('kg1')}</SelectItem>
-                        <SelectItem value="kg2">{t('kg2')}</SelectItem>
+                        <SelectItem value="kg3">{t('kg3')}</SelectItem>
                         <SelectItem value="grade1">{t('grade1')}</SelectItem>
                         <SelectItem value="grade2">{t('grade2')}</SelectItem>
                         <SelectItem value="grade3">{t('grade3')}</SelectItem>
@@ -376,7 +376,15 @@ const Enrollment = () => {
                     required
                   />
                   <Label htmlFor="terms" className="text-sm">
-                    {t('agreeToTerms')} *
+                    {language === 'ar' ? (
+                      <>
+                        أوافق على <button type="button" className="text-primary underline hover:text-primary/80" onClick={() => setShowTermsModal(true)}>الشروط والأحكام وسياسة الخصوصية</button> *
+                      </>
+                    ) : (
+                      <>
+                        I agree to the enrollment <button type="button" className="text-primary underline hover:text-primary/80" onClick={() => setShowTermsModal(true)}>terms and conditions and privacy policy</button> *
+                      </>
+                    )}
                   </Label>
                 </div>
               </div>
@@ -394,92 +402,7 @@ const Enrollment = () => {
         </div>
       </section>
 
-      {/* Tuition Fees */}
-      <section className="py-16 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-4 font-cairo">
-              {t('tuitionFees')}
-            </h2>
-            <div className="w-24 h-1 bg-accent mx-auto"></div>
-            <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
-              {t('tuitionFeesDesc')}
-            </p>
-          </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-              <thead className="bg-primary text-white">
-                <tr>
-                  <th className="py-4 px-6 text-left">
-                    {t('gradeLevel')}
-                  </th>
-                  <th className="py-4 px-6 text-left">
-                    {t('annualFees')}
-                  </th>
-                  <th className="py-4 px-6 text-left">
-                    {t('registrationFee')}
-                  </th>
-                  <th className="py-4 px-6 text-left">
-                    {t('paymentOptions')}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-muted hover:bg-muted/10 transition-colors">
-                  <td className="py-4 px-6">
-                    {t('kindergarten')}
-                  </td>
-                  <td className="py-4 px-6">$5,000</td>
-                  <td className="py-4 px-6">$500</td>
-                  <td className="py-4 px-6">
-                    {t('paymentOptionsList')}
-                  </td>
-                </tr>
-                <tr className="border-b border-muted hover:bg-muted/10 transition-colors">
-                  <td className="py-4 px-6">
-                    {t('elementarySchool')}
-                  </td>
-                  <td className="py-4 px-6">$7,500</td>
-                  <td className="py-4 px-6">$750</td>
-                  <td className="py-4 px-6">
-                    {t('paymentOptionsList')}
-                  </td>
-                </tr>
-                <tr className="border-b border-muted hover:bg-muted/10 transition-colors">
-                  <td className="py-4 px-6">
-                    {t('middleSchool')}
-                  </td>
-                  <td className="py-4 px-6">$9,000</td>
-                  <td className="py-4 px-6">$900</td>
-                  <td className="py-4 px-6">
-                    {t('paymentOptionsList')}
-                  </td>
-                </tr>
-                <tr className="hover:bg-muted/10 transition-colors">
-                  <td className="py-4 px-6">
-                    {t('highSchool')}
-                  </td>
-                  <td className="py-4 px-6">$12,000</td>
-                  <td className="py-4 px-6">$1,200</td>
-                  <td className="py-4 px-6">
-                    {t('paymentOptionsList')}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-8 text-center">
-            <p className="text-muted-foreground">
-              {t('feesIncludeNote')}
-            </p>
-            <p className="text-muted-foreground">
-              {t('additionalFeesNote')}
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section className="py-16 bg-white">
@@ -530,6 +453,84 @@ const Enrollment = () => {
           </div>
         </div>
       </section>
+
+      {/* Terms and Conditions Modal */}
+      {showTermsModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl max-w-4xl max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-bold text-primary font-cairo">
+                {language === 'ar' ? 'الشروط والأحكام' : 'Terms and Conditions'}
+              </h3>
+              <button
+                type="button"
+                onClick={() => setShowTermsModal(false)}
+                className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+              >
+                ×
+              </button>
+            </div>
+            
+            <div className="space-y-4 text-sm leading-relaxed">
+              {language === 'ar' ? (
+                <div className="text-right font-cairo">
+                  <p className="mb-4"><strong>1-</strong> يلتزم ولي أمر الطالب بتحقيق الغاية المرجوة من تسجيله في المدرسة، وبمتابعة دراسته وسلوكه الحسن.</p>
+                  <p className="mb-4"><strong>2-</strong> يقر ولي أمر الطالب بأنه اطلع على الأنظمة الداخلية والتعليمات والبرامج التربوية والأنشطة المعتمدة في المدرسة ووافق عليها.</p>
+                  <p className="mb-4"><strong>3-</strong> يلتزم ولي أمر الطالب بدفع كامل الأقساط المدرسية عن ابنه مهما كانت الأسباب التي تدعو لتغيب الطالب أو انسحابه من المدرسة، أو لأي سبب كان، ولا يعفى من دفع كامل الأقساط المدرسية مهما كانت المبررات.</p>
+                  <p className="mb-4"><strong>4-</strong> يحق للمدرسة إعادة تسجيل الطالب في حال عدم التزام ولي الأمر بدفع الأقساط المدرسية في مواعيدها المحددة.</p>
+                  <p className="mb-4"><strong>5-</strong> يقر ولي أمر الطالب بتحمل تبعات أي تلف يحدثه ابنه داخل المنشأة التعليمية سواء كان متعمداً أم بغير قصد.</p>
+                  
+                  <p className="mb-4"><strong>6-</strong> يلتزم الطرف الثاني بدفع كامل الأقساط المدرسية خلال العام الدراسي، وفي حال انسحاب الطالب يكون رد الأقساط وفق ما يلي:</p>
+                  <div className="mr-8 space-y-2">
+                    <p><strong>أ-</strong> يعاد كامل القسط للطالب قبل شهر من تاريخ بدء العام الدراسي.</p>
+                    <p><strong>ب-</strong> يعاد نصف القسط للطالب إذا انسحب خلال الأسبوع الأول من دوام المدرسة.</p>
+                    <p><strong>ج-</strong> لا يعاد أي جزء من القسط إذا انقطع الطالب عن المدرسة بعد مرور أكثر من أسبوع على دوام المدرسة.</p>
+                    <p><strong>د-</strong> لا يعاد أي جزء من القسط إذا فصل الطالب من المؤسسة بسبب مخالفته الأنظمة بشكل مفصل.</p>
+                    <p><strong>هـ-</strong> يحق للطرف الأول (المدرسة) حسم جميع الاستحقاقات المالية المترتبة على ولي الأمر (كالكتب والقرطاسية واللباس المدرسي والنقل، وأي خدمات إضافية) من القسط السنوي المتفق عليه.</p>
+                  </div>
+                  
+                  <p className="mb-4"><strong>7-</strong> يلتزم الطرف الثاني بدفع الأقساط المدرسية والأجور التعليمية الأخرى وفق اللائحة الداخلية للمدرسة.</p>
+                  <p className="mb-4"><strong>8-</strong> لا يحق لولي الأمر استرداد الأقساط الخاصة للعام الدراسي التالي إلا بعد تقديم طلب خطي قبل شهر من انتهاء العام الدراسي.</p>
+                  <p className="mb-4"><strong>9-</strong> يمنع منعاً باتاً المطالبة بنقل التلميذ في حال الانتقال إلى مؤسسة تعليمية خاصة أخرى إلى حين استكمال ما عليهم من التزامات مالية.</p>
+                  <p className="mb-4"><strong>10-</strong> الإقرار بالالتزام والموافقة على ما ورد في بنود هذا العقد ولا يحق للطرفين المراجعة عما ورد فيه أمام أي جهة رسمية.</p>
+                </div>
+              ) : (
+                <div>
+                  <p className="mb-4"><strong>1-</strong> The student's guardian commits to achieving the intended purpose of enrolling the student in the school, and to following up on their studies and good conduct.</p>
+                  <p className="mb-4"><strong>2-</strong> The student's guardian acknowledges that they have reviewed the internal regulations, instructions, educational programs, and approved activities in the school and agreed to them.</p>
+                  <p className="mb-4"><strong>3-</strong> The student's guardian commits to paying full school fees for their child regardless of the reasons for the student's absence or withdrawal from school, or for any reason whatsoever, and is not exempt from paying full school fees regardless of justifications.</p>
+                  <p className="mb-4"><strong>4-</strong> The school has the right to re-register the student in case the guardian fails to pay school fees within their specified deadlines.</p>
+                  <p className="mb-4"><strong>5-</strong> The student's guardian acknowledges bearing responsibility for any damage caused by their child within the educational facility whether intentional or unintentional.</p>
+                  
+                  <p className="mb-4"><strong>6-</strong> The second party commits to paying full school fees during the academic year, and in case of student withdrawal, refunds will be processed as follows:</p>
+                  <div className="ml-8 space-y-2">
+                    <p><strong>a-</strong> Full fee refund to the student one month before the start of the academic year.</p>
+                    <p><strong>b-</strong> Half fee refund to the student if withdrawn within the first week of school attendance.</p>
+                    <p><strong>c-</strong> No portion of the fee will be refunded if the student discontinues after more than one week of school attendance.</p>
+                    <p><strong>d-</strong> No portion of the fee will be refunded if the student is dismissed from the institution due to violation of regulations in detail.</p>
+                    <p><strong>e-</strong> The first party (school) has the right to deduct all financial obligations owed by the guardian (such as books, stationery, school uniform, transportation, and any additional services) from the agreed annual fee.</p>
+                  </div>
+                  
+                  <p className="mb-4"><strong>7-</strong> The second party commits to paying school fees and other educational charges according to the school's internal regulations.</p>
+                  <p className="mb-4"><strong>8-</strong> The guardian does not have the right to refund fees for the next academic year unless a written request is submitted one month before the end of the academic year.</p>
+                  <p className="mb-4"><strong>9-</strong> Absolutely prohibited from requesting student transfer when moving to another private educational institution until all financial obligations are completed.</p>
+                  <p className="mb-4"><strong>10-</strong> Acknowledgment of commitment and agreement to all terms in this contract, and neither party has the right to review what is stated before any official authority.</p>
+                </div>
+              )}
+            </div>
+            
+            <div className="mt-6 flex justify-end">
+              <Button
+                type="button"
+                onClick={() => setShowTermsModal(false)}
+                className="bg-primary hover:bg-primary/90 text-white"
+              >
+                {language === 'ar' ? 'إغلاق' : 'Close'}
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

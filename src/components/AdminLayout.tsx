@@ -68,7 +68,6 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, pageTitle }) => {
     { name: 'الفعاليات', href: '/admin/events', icon: Calendar, badge: 2 },
     { name: 'معرض الصور', href: '/admin/gallery', icon: Image, badge: 0 },
     { name: 'الرسائل', href: '/admin/messages', icon: MessageSquare, badge: 8 },
-    { name: 'الأسعار', href: '/admin/pricing', icon: DollarSign, badge: 0 },
     { name: 'الإعدادات', href: '/admin/settings', icon: Settings, badge: 0 },
   ];
 
@@ -171,7 +170,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, pageTitle }) => {
       </div>
 
       {/* Main content */}
-      <div className="lg:ml-72">
+      <div className="lg:mr-72">
         {/* Header */}
         <header className="bg-white/95 backdrop-blur-sm border-b border-slate-200 dark:bg-slate-900/95 dark:border-slate-700 sticky top-0 z-30">
           <div className="flex items-center justify-between px-6 py-4">
