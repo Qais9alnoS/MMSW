@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - الصفحة غير موجودة | Almukhtar Schools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 2rem;
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: 700;
+            color: #e11d48;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .home-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .language-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .language-toggle:hover {
+            background: #f3f4f6;
+            transform: translateY(-1px);
+        }
+
+        [dir="ltr"] .language-toggle {
+            right: auto;
+            left: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .error-code {
+                font-size: 4rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .error-message {
+                font-size: 1.125rem;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="language-toggle" onclick="toggleLanguage()">
+        <span id="lang-text">English</span>
+    </button>
+
+    <div class="container fade-in">
+        <div class="logo" id="school-name">مدارس المختار النموذجية</div>
+        
+        <div class="error-code">404</div>
+        
+        <h1 class="error-title" id="error-title">عذراً! الصفحة غير موجودة</h1>
+        
+        <p class="error-message" id="error-message">
+            عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها.
+        </p>
+        
+        <a href="/" class="home-button" id="home-button">
+            العودة إلى الصفحة الرئيسية
+        </a>
+    </div>
+
+    <script>
+        const translations = {
+            ar: {
+                schoolName: 'مدارس المختار النموذجية',
+                pageNotFound: 'عذراً! الصفحة غير موجودة',
+                pageNotFoundMessage: 'عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها.',
+                returnToHome: 'العودة إلى الصفحة الرئيسية',
+                languageToggle: 'English'
+            },
+            en: {
+                schoolName: 'Almukhtar Model Schools',
+                pageNotFound: 'Oops! Page not found',
+                pageNotFoundMessage: 'Sorry, the page you are looking for does not exist or has been moved.',
+                returnToHome: 'Return to Home',
+                languageToggle: 'العربية'
+            }
+        };
+
+        let currentLanguage = 'ar';
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'ar' ? 'en' : 'ar';
+            updateContent();
+            updateDirection();
+        }
+
+        function updateContent() {
+            const t = translations[currentLanguage];
+            
+            document.getElementById('school-name').textContent = t.schoolName;
+            document.getElementById('error-title').textContent = t.pageNotFound;
+            document.getElementById('error-message').textContent = t.pageNotFoundMessage;
+            document.getElementById('home-button').textContent = t.returnToHome;
+            document.getElementById('lang-text').textContent = t.languageToggle;
+        }
+
+        function updateDirection() {
+            const html = document.documentElement;
+            const body = document.body;
+            
+            if (currentLanguage === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+            }
+        }
+
+        // Initialize with Arabic as default
+        updateContent();
+        updateDirection();
+
+        // Check for saved language preference
+        const savedLanguage = localStorage.getItem('language') || 'ar';
+        if (savedLanguage !== currentLanguage) {
+            currentLanguage = savedLanguage;
+            updateContent();
+            updateDirection();
+        }
+
+        // Save language preference
+        document.querySelector('.language-toggle').addEventListener('click', () => {
+            localStorage.setItem('language', currentLanguage);
+        });
+    </script>
+</body>
+</html>
